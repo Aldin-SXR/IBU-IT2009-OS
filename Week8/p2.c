@@ -7,7 +7,7 @@ const int loops = 1000000;
 
 void* worker(void *arg) {
     for (int i = 0; i < loops; i++) {
-        counter++;
+        counter++; // critical section
     }
     return NULL;
  }

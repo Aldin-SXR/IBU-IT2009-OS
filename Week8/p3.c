@@ -8,9 +8,9 @@ pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
 
 void* worker(void *arg) {
     for (int i = 0; i < loops; i++) {
-        pthread_mutex_lock(&lock);
-        counter++;
-        pthread_mutex_unlock(&lock);
+        pthread_mutex_lock(&lock); // acquire lock
+        counter++; // critical section
+        pthread_mutex_unlock(&lock); // release lock
     }
     return NULL;
  }
