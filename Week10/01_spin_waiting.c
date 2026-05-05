@@ -2,7 +2,7 @@
 #include <pthread.h>
 #include <unistd.h>
 
-volatile int done = 0;
+volatile int done = 0; // state variable
 
 void *child(void *arg) {
     printf("[child] running\n");
